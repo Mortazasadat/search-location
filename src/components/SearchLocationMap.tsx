@@ -11,11 +11,11 @@ function SearchLocationMap() {
   const [place, setPlace] = React.useState<Place | null>(null);
 
   return (
-    <div className="grid  grid-cols-12">
-      <div className=" col-span-3 p-5  h-screen">
+    <div className="flex flex-col lg:grid  grid-cols-12">
+      <div className=" lg:col-span-3 p-5  lg:h-screen">
         <SearchLocation onPlaceClick={(p) => setPlace(p)} />
       </div>
-      <div className="bg-blue-50 h-screen col-span-9">
+      <div className="bg-blue-50 lg:h-screen lg:col-span-9">
         <DynamicMapCom place={place} />
       </div>
     </div>

@@ -51,13 +51,13 @@ function SearchLocation({ onPlaceClick }: SearchLocationProps) {
             places.map((place) => {
               return (
                 <div
-                  className="border border-gray-300  grid grid-cols-[1fr_60px] items-center mb-2 p-1.5 rounded-md"
+                  className="border border-gray-300 flex flex-col  md:grid grid-cols-[1fr_60px] items-center mb-2 p-1.5 rounded-md"
                   key={place.id}
                 >
                   <p className="text-sm pr-1"> {place.name} </p>
                   <button
                     onClick={() => onPlaceClick(place)}
-                    className="px-3 py-2 bg-slate-800 hover:bg-slate-900 transition-all duration-200 text-white rounded-md"
+                    className="px-3 w-full mt-2 lg:mt-0 lg:w-full py-2 bg-slate-800 hover:bg-slate-900 transition-all duration-200 text-white rounded-md"
                   >
                     Go
                   </button>
