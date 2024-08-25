@@ -2,7 +2,7 @@
 import { Search } from "@/actions";
 import { Place } from "@/types";
 import React, { useState } from "react";
-import Loading from "./Loading";
+import Loading from "./Loader";
 
 interface SearchLocationProps {
   onPlaceClick: (place: Place) => void;

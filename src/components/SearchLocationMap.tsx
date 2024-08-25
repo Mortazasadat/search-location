@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
 import SearchLocation from "./SearchLocation";
-import Map from "./Map";
 import { Place } from "@/types";
+import MapCom from "./Map";
+import dynamic from "next/dynamic";
+
+const DynamicMapCom = dynamic(() => import("./Map"), { ssr: false });
 
 function SearchLocationMap() {
   const [place, setPlace] = React.useState<Place | null>(null);
@@ -13,7 +16,7 @@ function SearchLocationMap() {
         <SearchLocation onPlaceClick={(p) => setPlace(p)} />
       </div>
       <div className="bg-blue-50 h-screen col-span-9">
-        <Map place={place} />
+        <DynamicMapCom place={place} />
       </div>
     </div>
   );

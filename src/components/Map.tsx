@@ -1,14 +1,14 @@
+import React, { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 import type { Map as leafletMap } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Place } from "@/types";
-import React, { useEffect, useRef } from "react";
 
 interface MapPorps {
   place: Place | null;
 }
 
-function Map({ place }: MapPorps) {
+export default function MapCom({ place }: MapPorps) {
   const mapRef = useRef<leafletMap | null>(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Map({ place }: MapPorps) {
   }, [place]);
 
   return (
-    <div>
+    <div className="h-full w-full">
       <MapContainer
         ref={mapRef}
         center={[40.7, -74]}
@@ -49,5 +49,3 @@ function Map({ place }: MapPorps) {
     </div>
   );
 }
-
-export default Map;

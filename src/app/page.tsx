@@ -1,9 +1,11 @@
 import SearchLocationMap from "@/components/SearchLocationMap";
 
-export default function Home() {
+function Page() {
   return (
     <div className="h-full">
       <SearchLocationMap />
     </div>
   );
 }
+
+export default Page;
